@@ -72,7 +72,7 @@ export default function UploadBox() {
     });
 
     return (
-        <div className="flex w-full">
+        <div className="flex w-full overflow-x-hidden">
 
             {/* Sidebar */}
             {topics.length > 0 && (
@@ -93,12 +93,12 @@ export default function UploadBox() {
             )}
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-col items-center px-10 pb-20">
+            <div className="flex-1 flex flex-col items-center px-4 md:px-10 pb-20 overflow-x-hidden">
 
                 {/* Upload */}
                 <div
                     {...getRootProps()}
-                    className={`border border-dashed rounded-2xl p-12 w-[700px] cursor-pointer transition-all duration-300 mt-10
+                    className={`border border-dashed rounded-2xl p-12 w-full max-w-[700px] cursor-pointer transition-all duration-300 mt-10
     ${isDragActive
                             ? "border-white bg-zinc-800"
                             : "border-zinc-700 bg-zinc-900/40"
@@ -127,7 +127,7 @@ export default function UploadBox() {
 
                 {/* Loading */}
                 {loading && (
-                    <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-8 w-[700px] text-center animate-pulse">
+                    <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-8 w-full max-w-[700px] text-center animate-pulse">
 
                         <h2 className="text-2xl font-bold mb-3">
                             Generating AI Wiki...
@@ -147,7 +147,7 @@ export default function UploadBox() {
                         placeholder="Search wiki topics..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="w-[700px] mt-10 bg-black border border-zinc-800 rounded-2xl px-6 py-4 text-white outline-none focus:border-white transition shadow-lg"
+                        className="w-full max-w-[700px] mt-10 bg-black border border-zinc-800 rounded-2xl px-6 py-4 text-white outline-none focus:border-white transition shadow-lg"
                     />
                 )}
 
@@ -157,7 +157,7 @@ export default function UploadBox() {
                 )}
 
                 {/* Topic Cards */}
-                <div className="mt-10 grid gap-6 w-[700px]">
+                <div className="mt-10 grid gap-6 w-full max-w-[700px]">
 
                     {filteredTopics.map((topic, index) => (
                         <WikiCard
@@ -190,7 +190,7 @@ export default function UploadBox() {
 
                 {/* Selected Topic */}
                 {selectedTopic && (
-                    <div className="mt-16 w-[800px] bg-gradient-to-br from-zinc-950 to-black border border-white/10 rounded-3xl p-10 shadow-2xl">
+                    <div className="mt-16 w-full max-w-[800px] bg-gradient-to-br from-zinc-950 to-black border border-white/10 rounded-3xl p-10 shadow-2xl">
 
                         <div className="mb-8">
 
