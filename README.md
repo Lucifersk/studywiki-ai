@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StudyWiki AI
 
-## Getting Started
+AI-powered semantic learning platform built with Next.js, Groq, and HydraDB.
 
-First, run the development server:
+Transform raw notes into structured wiki pages, semantic knowledge graphs, and contextual AI reasoning systems.
+
+---
+
+# Live Demo
+
+https://studywiki-ai.vercel.app
+
+---
+
+# Features
+
+- AI-generated wiki topics
+- Semantic knowledge graph visualization
+- Contextual AI chat assistant
+- Interactive topic navigation
+- Drag-and-drop notes upload
+- HydraDB persistent memory integration
+- Groq ultra-fast inference
+
+---
+
+# Screenshots
+
+## Upload Interface
+
+![Upload UI](./public/screenshots/upload-ui.png)
+
+---
+
+## AI Wiki Topics
+
+![Wiki Cards](./public/screenshots/wiki-cards.png)
+
+---
+
+## Knowledge Graph
+
+![Knowledge Graph](./public/screenshots/graph.png)
+
+---
+
+## AI Chat Assistant
+
+![Chat Panel](./public/screenshots/chat-panel.png)
+
+---
+
+# Tech Stack
+
+- Next.js 16
+- TypeScript
+- Tailwind CSS
+- Groq API
+- HydraDB
+- React Flow
+- React Dropzone
+- Framer Motion
+
+---
+
+# How It Works
+
+1. Upload study notes
+2. AI extracts semantic concepts
+3. Wiki topics are generated
+4. Relationships become a knowledge graph
+5. Users can ask contextual AI questions
+6. Knowledge is persisted using HydraDB
+
+---
+
+# Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```txt
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create `.env.local`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+GROQ_API_KEY=your_groq_api_key
+HYDRA_API_KEY=your_hydra_api_key
+HYDRA_TENANT_ID=studywiki-ai
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# Architecture
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+StudyWiki AI combines:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Groq for low-latency LLM inference
+- HydraDB for persistent semantic memory
+- React Flow for relationship visualization
+- Next.js App Router for scalable frontend/backend architecture
+
+---
+
+# Future Improvements
+
+- PDF support
+- Multi-document memory
+- Flashcard generation
+- Quiz generation
+- Collaborative study spaces
+- RAG-based retrieval
+
+---
+
+# Built For
+
+HydraDB Wikithon Hackathon 🚀
