@@ -97,13 +97,14 @@ export default function UploadBox() {
 
                 {/* Upload */}
                 <div
-                    {...getRootProps({ onClick: (e) => e.stopPropagation() })}
+                    {...getRootProps()}
                     className={`border border-dashed rounded-2xl p-12 w-[700px] cursor-pointer transition-all duration-300 mt-10
-          ${isDragActive
+    ${isDragActive
                             ? "border-white bg-zinc-800"
                             : "border-zinc-700 bg-zinc-900/40"
                         }`}
                 >
+
                     <input {...getInputProps()} className="hidden" />
 
                     <div className="flex flex-col items-center justify-center text-center pointer-events-none">
@@ -121,6 +122,7 @@ export default function UploadBox() {
                         </p>
 
                     </div>
+
                 </div>
 
                 {/* Loading */}
