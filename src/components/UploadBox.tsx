@@ -21,6 +21,7 @@ export default function UploadBox() {
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState("");
     const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
+    const [fileName, setFileName] = useState("");
 
     // SEARCH FILTER
     const filteredTopics = topics.filter((topic) =>
@@ -30,6 +31,7 @@ export default function UploadBox() {
     const onDrop = useCallback(async (acceptedFiles: File[]) => {
 
         const file = acceptedFiles[0];
+        setFileName(file.name);
 
         setLoading(true);
 
@@ -61,6 +63,12 @@ export default function UploadBox() {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
         multiple: false,
+
+        accept: {
+            "text/plain": [".txt"],
+            "text/markdown": [".md"],
+            "application/json": [".json"],
+        },
     });
 
     return (
@@ -109,7 +117,7 @@ export default function UploadBox() {
                         </h2>
 
                         <p className="text-zinc-400 mt-3 max-w-md">
-                            Generate AI-powered study wiki pages.
+                            Upload TXT, Markdown, or JSON notes to generate an AI-powered wiki.
                         </p>
 
                     </div>
@@ -213,6 +221,12 @@ export default function UploadBox() {
                 {/* AI Chat */}
                 {topics.length > 0 && (
                     <ChatPanel topics={topics} />
+                )}
+
+                {fileName && (
+                    <div className="mt-4 text-zinc-400">
+                        Uploaded: {fileName}
+                    </div>
                 )}
 
             </div>
