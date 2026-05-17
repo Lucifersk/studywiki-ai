@@ -114,11 +114,11 @@ export default function UploadBox() {
                         </div>
 
                         <h2 className="text-2xl font-semibold">
-                            Upload your notes
+                            Transform Notes into AI Knowledge
                         </h2>
 
-                        <p className="text-zinc-400 mt-3 max-w-md">
-                            Upload TXT, Markdown, or JSON notes to generate an AI-powered wiki.
+                        <p className="text-zinc-600 text-xs mt-4">
+                            Powered by Groq + HydraDB
                         </p>
 
                     </div>

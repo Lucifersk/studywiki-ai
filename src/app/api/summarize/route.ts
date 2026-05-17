@@ -15,6 +15,7 @@ export async function POST(req: Request) {
 
     const completion = await openai.chat.completions.create({
       model: "llama-3.3-70b-versatile",
+
       messages: [
         {
           role: "system",
@@ -38,13 +39,32 @@ Format:
           content: `Convert these notes into wiki topics:\n\n${text}`,
         },
       ],
+
       temperature: 0.5,
     });
 
-    const content = completion.choices[0].message.content;
+    const content =
+      completion.choices[0].message.content;
+
+    const topics = JSON.parse(content || "[]");
+
+    // HYDRADB INGEST
+    await fetch("https://api.hydradb.com/v1/ingest", {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.HYDRA_API_KEY}`,
+      },
+
+      body: JSON.stringify({
+        tenant_id: process.env.HYDRA_TENANT_ID,
+        data: topics,
+      }),
+    });
 
     return Response.json({
-      topics: JSON.parse(content || "[]"),
+      topics,
     });
 
   } catch (error) {
