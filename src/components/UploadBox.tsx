@@ -107,7 +107,7 @@ export default function UploadBox() {
 
                     <input {...getInputProps()} className="hidden" />
 
-                    <div className="flex flex-col items-center justify-center text-center pointer-events-none">
+                    <div className="flex flex-col items-center justify-center text-centernp">
 
                         <div className="bg-white text-black p-4 rounded-full mb-6">
                             <Upload size={32} />

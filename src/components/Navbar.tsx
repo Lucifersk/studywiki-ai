@@ -5,9 +5,17 @@ export default function Navbar() {
                 StudyWiki AI
             </h1>
 
-            <button className="bg-white text-black px-4 py-2 rounded-lg">
+            <label className="bg-white text-black px-5 py-2 rounded-xl cursor-pointer hover:scale-105 transition">
+
                 Upload Notes
-            </button>
+
+                <input
+                    type="file"
+                    className="hidden"
+                    accept=".txt,.md,.json"
+                />
+
+            </label>
         </nav>
     );
 }
